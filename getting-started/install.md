@@ -1,8 +1,6 @@
 # Installing and Running a Node
 
-UPDATED FOR TAG: 1.14.2
-
-## PREREQUISITES
+### Prerequisites
 
 Set up your platform:
 
@@ -13,7 +11,7 @@ You will need:
 * Make sure you are on a network that is not firewalled. In particular, we will be using TCP/IP port 3000 and 3001 by default to establish connections with other nodes, so this will need to be open.
 * You can follow this [SERVER TUTORIAL](https://github.com/carloslodelar/SPO/tree/baec64ba9efba39d4b60b7824fb4d7b962f2c3e7/getting-started/000_AWS.md) to get the server up and running.
 
-## Install dependencies
+### Install dependencies
 
 We need the following packages and tools on our Linux system to download the source code and build it:
 
@@ -55,15 +53,15 @@ mkdir -p ~/.local/bin
 mv cabal ~/.local/bin/
 ```
 
-This will work on a fresh [AWS instance](https://github.com/carloslodelar/SPO/tree/baec64ba9efba39d4b60b7824fb4d7b962f2c3e7/getting-started/000_AWS.md) and assumes that folder `~/.local/bin` is in your `PATH`. On other systems, you must either move the executable to a folder that is in your `PATH` or modify your `PATH` by adding the line
+Verify that .local/bin is in your PATH
 
 ```text
-export PATH="~/.local/bin:$PATH"
+echo $PATH
 ```
 
-to your `.bashrc`-file.
+If .local/bin is not in the PATH, you need to add the following line to  your `.bashrc`file
 
-## Adding ~/.local/bin and ~/.cabal/bin to the PATH
+### Adding ~/.local/bin and ~/.cabal/bin to the PATH
 
 Navigate to your home folder:
 
@@ -80,7 +78,6 @@ $ nano .bashrc
 Go to the bottom of the file and add the following lines
 
 ```text
-export PATH="~/.cabal/bin:$PATH"
 export PATH="~/.local/bin:$PATH"
 ```
 
@@ -98,7 +95,9 @@ cabal update
 
 Above instructions install Cabal version `3.2.0.0`. You can check the version by typing
 
+```text
 cabal --version
+```
 
 Download and install GHC:
 
@@ -126,15 +125,13 @@ sudo make install
 export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
 ```
 
-## Download the source code for cardano-node
-
-To download the source code, we use git:
+### Download the source code for cardano-node
 
 ```text
 git clone https://github.com/input-output-hk/cardano-node.git
 ```
 
-This should create a folder `cardano-node`, then download the latest source code from git into it.
+This creates the folder `cardano-node`  and downloads the latest source code.
 
 After the download has finished, we can check its content by
 
@@ -142,15 +139,13 @@ After the download has finished, we can check its content by
 ls cardano-node
 ```
 
-Note that the content of your `cardano-node`-folder can slightly differ from this!
-
 We change our working directory to the downloaded source code folder:
 
 ```text
 cd cardano-node
 ```
 
-For reproducible builds, we should check out a specific release, a specific "tag". For the Shelley Testnet, we will use tag `1.14.2`, which we can check out as follows:
+For reproducible builds, we should check out a specific release, a specific "tag". For the Shelley Testnet, we will use tag `1.15.1`, which we can check out as follows:
 
 ```text
 git fetch --all --tags
@@ -166,7 +161,7 @@ Now we build and install the node with `cabal`, which will take a couple of minu
 cabal build all 
 ```
 
-
+Now we can copy the executables files to the .local/bin directory
 
 ```text
 cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-node-1.15.1/x/cardano-node/build/cardano-node/cardano-node ~/.local/bin/
