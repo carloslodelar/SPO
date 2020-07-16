@@ -155,7 +155,7 @@ For reproducible builds, we should check out a specific release, a specific "tag
 ```text
 git fetch --all --tags
 git tag
-git checkout tags/1.14.2
+git checkout tags/1.15.1
 ```
 
 ## Build and install the node
@@ -163,16 +163,24 @@ git checkout tags/1.14.2
 Now we build and install the node with `cabal`, which will take a couple of minutes the first time you do a build. Later builds will be much faster, because everything that does not change will be cached.
 
 ```text
-       cabal install cardano-node cardano-cli
+cabal build all 
 ```
 
-This will build and install `cardano-node` and `cardano-cli` into your `~/.cabal/bin` folder by default, so the remark about your `PATH` from above applies here as well: Make sure folder `~/.cabal/bin` is in your path or copy the executables to a folder that is. Alternatively you can run `cabal install cardano-node cardano-cli --installdir="$HOME/.local/bin"` to install the `cardano-node` and `cardano-cli` directly into your `~/.local/bin` folder.
 
-**Note**: When using **cabal install**, make sure you have `overwrite-policy: always` in your `.cabal/config` or delete old versions of `cardano-node` and `cardano-cli` from `~/.cabal/bin`. Otherwise cabal install will not overwrite the old executables.
 
-If you ever want to update the code to a newer version, go to the `cardano-node` directory, pull the latest code with `git` and rebuild.
+```text
+cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-node-1.15.1/x/cardano-node/build/cardano-node/cardano-node ~/.local/bin/
+```
 
-This will be much faster than the initial build:
+```text
+cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-cli-1.15.1/x/cardano-cli/build/cardano-cli/cardano-cli ~/.local/bin/
+```
+
+```text
+cardano-cli --version
+```
+
+If you need to update to a newer version follow the steps below. This will be much faster than the initial build:
 
 ```text
 cd cardano-node
@@ -182,17 +190,7 @@ git checkout tags/<the-tag-you-want>
 cabal install cardano-node cardano-cli
 ```
 
-This will build and install `cardano-node` and `cardano-cli` into your `~/.cabal/bin` folder. Alternatively you can run `cabal install cardano-node cardano-cli --installdir="$HOME/.local/bin"` to install the `cardano-node` and `cardano-cli` directly into your `~/.local/bin` folder.
-
 **Note:** It might be necessary to delete the `db`-folder \(the database-folder\) before running an updated version of the node.
-
-We can start a node on the Cardano mainnet with
-
-```text
-scripts/mainnet.sh
-```
-
-![Node running on mainnet.](../.gitbook/assets/mainnet.png)
 
 Congratulations! You have installed the node, started it and connected it to the Cardano mainnet.
 
