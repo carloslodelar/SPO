@@ -1,32 +1,24 @@
 # Diagnosing transactions problems and troubleshooting
 
-If you experience any problems while setting up your network, we are here to help. Logs created by the nodes will help us classify any problems and suggest solutions. The log levels used are info, debug, and trace. 
-This section outlines how to diagnose and solve some problems that you may encounter:
+If you experience any problems while setting up your network, we are here to help. Logs created by the nodes will help us classify any problems and suggest solutions. The log levels used are info, debug, and trace. This section outlines how to diagnose and solve some problems that you may encounter:
 
 **Problem**: Failed reading: Your input is either malformed or not hex encoded:
 
-```$ cardano-cli shelley transaction build-raw \
---tx-in f5296e996940b1c81f781594293d423b4250a454f5832b0740a923f74460d34#1 \
---tx-out $(cat payment2.addr)+100000000 \
---tx-out $(cat payment.addr)+899832033 \
---ttl 335000 --fee 167965 \
---out-file tx001.raw
-```
+\`\`\`$ cardano-cli shelley transaction build-raw  --tx-in f5296e996940b1c81f781594293d423b4250a454f5832b0740a923f74460d34\#1  --tx-out $\(cat payment2.addr\)+100000000  --tx-out $\(cat payment.addr\)+899832033  --ttl 335000 --fee 167965  --out-file tx001.raw
 
+```text
 ```> option --tx-in: Failed reading: Your input is either 
 malformed or not hex encoded: 
 f5296e996940b1c81f781594293d423b4250a454f5832b0740a923f74460d34
 ```
 
-**Diagnosis**:  tx-in is not a valid UTXO 
+**Diagnosis**: tx-in is not a valid UTXO
 
-**Solution**: Make sure that you are using a correct UTXO. You can query this with: 
+**Solution**: Make sure that you are using a correct UTXO. You can query this with:
 
-```$ cardano-cli shelley query utxo \
- --address $(cat payment.addr) \
- --testnet-magic 42
-```
+\`\`\`$ cardano-cli shelley query utxo  --address $\(cat payment.addr\)  --testnet-magic 42
 
+```text
 **Problem**: ExpiredUTxO
 
 ```$ cardano-cli shelley transaction submit \
@@ -34,8 +26,9 @@ f5296e996940b1c81f781594293d423b4250a454f5832b0740a923f74460d34
 > --testnet-magic 42
 ```
 
-```> ApplyTxError [LedgerFailure (UtxowFailure (UtxoFailure(ExpiredUTxO {pfUTXOttl = SlotNo {unSlotNo = 123456}, pfUTXOcurrentSlot = SlotNo {unSlotNo = 123457}})))]
-```
+\`\`\`&gt; ApplyTxError \[LedgerFailure \(UtxowFailure \(UtxoFailure\(ExpiredUTxO {pfUTXOttl = SlotNo {unSlotNo = 123456}, pfUTXOcurrentSlot = SlotNo {unSlotNo = 123457}}\)\)\)\]
+
+```text
 **Diagnosis**: TTL has already passed. 
 
 **Solution**: Look at pfUTXOttl and pfUTXOcurrentSlot. Current Slot is ahead of UTXOttl. 
@@ -49,8 +42,9 @@ Build a new transaction with a TTL (time to live) higher than Current Slot. As a
 > --testnet-magic 42
 ```
 
-```ApplyTxError [LedgerFailure (UtxowFailure (UtxoFailure (FeeTooSmallUTxO (Coin 172409) (Coin 167965)))),LedgerFailure (UtxowFailure (UtxoFailure (ValueNotConservedUTxO (Coin 1000000000)(Coin 999999998))))]
-```
+\`\`\`ApplyTxError \[LedgerFailure \(UtxowFailure \(UtxoFailure \(FeeTooSmallUTxO \(Coin 172409\) \(Coin 167965\)\)\)\),LedgerFailure \(UtxowFailure \(UtxoFailure \(ValueNotConservedUTxO \(Coin 1000000000\)\(Coin 999999998\)\)\)\)\]
+
+```text
 **Diagnosis**: Value not Conserved: (Input UTXO ≠ Fee + Amount sent + Change)
 
 **Solution**: Check that output amount is equal to input amount
@@ -61,8 +55,10 @@ Build a new transaction with a TTL (time to live) higher than Current Slot. As a
 --tx-file tx001.signed \
 --testnet-magic 42
 ```
-```> ApplyTxError [LedgerFailure (UtxowFailure (UtxoFailure (BadInputsUTxO (fromList [TxIn (TxId {_TxId =f5296e996940b1c81f781594293d423b4250a454f5832b0740a923f74460d34e}) ]))))
-```
+
+\`\`\`&gt; ApplyTxError \[LedgerFailure \(UtxowFailure \(UtxoFailure \(BadInputsUTxO \(fromList \[TxIn \(TxId {\_TxId =f5296e996940b1c81f781594293d423b4250a454f5832b0740a923f74460d34e}\) \]\)\)\)\)
+
+```text
 **Diagnosis**: Bad UTXO transaction index
 
 **Solution**: Verify the UTXO transaction index using:
@@ -72,9 +68,11 @@ Build a new transaction with a TTL (time to live) higher than Current Slot. As a
  --testnet-magic 42
 ```
 
-```>  TxHash                                    TxIx      Lovelace
---------------------------------------------------------------------------
-7f1d95ce599c84064c61903c0b1334c826b55c48a1.... 1      1000000000000
-```
+## \`\`\`&gt;  TxHash                                    TxIx      Lovelace
+
+7f1d95ce599c84064c61903c0b1334c826b55c48a1.... 1 1000000000000
+
+\`\`\`
 
 We encourage you to share your ideas and suggestions on our [dedicated support page](https://iohk.zendesk.com/hc/en-us/categories/900000102203-Shelley-Testnet) so that we can create a library of solutions and support for the tasks that you need to perform.
+

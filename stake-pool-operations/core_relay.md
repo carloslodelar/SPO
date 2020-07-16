@@ -1,57 +1,63 @@
 # Configure topology files for block-producing and relay nodes.
 
-Before we register our stake pool, let's configure our __block-producing__ and __relay__ nodes:
+Before we register our stake pool, let's configure our **block-producing** and **relay** nodes:
 
-__NOTE:__ Here you can find peers to connect to, and submit your own relay's data:  https://github.com/input-output-hk/cardano-ops/blob/master/topologies/ff-peers.nix#L5-L10
+**NOTE:** Here you can find peers to connect to, and submit your own relay's data: [https://github.com/input-output-hk/cardano-ops/blob/master/topologies/ff-peers.nix\#L5-L10](https://github.com/input-output-hk/cardano-ops/blob/master/topologies/ff-peers.nix#L5-L10)
 
-### Configure the block-producing node
+## Configure the block-producing node
 
 Get the configuration files for your block-producing node if you don't have them already, for example
 
-    mkdir config-files
-    cd config-files     
+```text
+mkdir config-files
+cd config-files     
 
-    wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/shelley_testnet-config.json
-    wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/shelley_testnet-genesis.json
-    wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/shelley_testnet-topology.json
+wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/shelley_testnet-config.json
+wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/shelley_testnet-genesis.json
+wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/shelley_testnet-topology.json
+```
 
-Make the __block-producing__ node to "talk" only to __YOUR__ relay node. Do not forget to configure your firewall also:
+Make the **block-producing** node to "talk" only to **YOUR** relay node. Do not forget to configure your firewall also:
 
-    nano shelley_testnet-topology.json
+```text
+nano shelley_testnet-topology.json
 
-  	{
-  	  "Producers": [
-  	    {
-  	      "addr": "<RELAY IP ADDRESS",
-  	      "port": <PORT>,
-  	      "valency": 1
-  	    }
-  	  ]
-  	}
+  {
+    "Producers": [
+      {
+        "addr": "<RELAY IP ADDRESS",
+        "port": <PORT>,
+        "valency": 1
+      }
+    ]
+  }
+```
 
-### Configure the relay node:
+## Configure the relay node:
 
-Make your __relay node__ `talk` to your __block-producing__ node and __other relays__ in the network by editing the `shelley_testnet-topology.json` file:
+Make your **relay node** `talk` to your **block-producing** node and **other relays** in the network by editing the `shelley_testnet-topology.json` file:
 
+```text
+nano shelley_testnet-topology.json
 
-    nano shelley_testnet-topology.json
-
+{
+  "Producers": [
     {
-      "Producers": [
-        {
-          "addr": "<BLOCK-PRODUCING IP ADDRESS",
-          "port": PORT,
-          "valency": 1
-        },
-        {
-          "addr": "<IP ADDRESS>",
-          "port": <PORT>,
-          "valency": 1
-        },
-        {
-          "addr": "<IP ADDRESS",
-          "port": <PORT>,
-          "valency": 1
-        }
-      ]
+      "addr": "<BLOCK-PRODUCING IP ADDRESS",
+      "port": PORT,
+      "valency": 1
+    },
+    {
+      "addr": "<IP ADDRESS>",
+      "port": <PORT>,
+      "valency": 1
+    },
+    {
+      "addr": "<IP ADDRESS",
+      "port": <PORT>,
+      "valency": 1
     }
+  ]
+}
+```
+

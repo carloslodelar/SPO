@@ -3,6 +3,7 @@
 The node should run successfully with the default configuration settings. However, if you need to change the node configuration, you can edit the `configuration.yaml` file that the `--config` flag points to. Ensure that the RequiresMagic parameter is set correctly for testnet usage.
 
 A Cardano node uses three .json files to define its configuration:
+
 * config.json
 * topology.json
 * genesis.json
@@ -10,35 +11,31 @@ A Cardano node uses three .json files to define its configuration:
 **Config.json**
 
 This file defines what a node does, and includes the following four sub sections:
+
 * Basic node configuration
 * Update parameters
 * Tracing
 * Logging control
 
-*Basic node configuration*
+_Basic node configuration_
 
-This declares the basic node configuration parameters (TPraos as the protocol, the correct path to the ff-genesis.json file, and RequiresMagic for testnet use).
+This declares the basic node configuration parameters \(TPraos as the protocol, the correct path to the ff-genesis.json file, and RequiresMagic for testnet use\).
 
 The basic configuration section might look like this:
 
-```{
+```text
   "Protocol": "TPraos",
   "GenesisFile": "ff-genesis.json",
   "RequiresNetworkMagic": "RequiresMagic",
-  ```
+```
 
-*Update parameters*
+_Update parameters_
 
 Block-producing nodes use a protocol version number as part of the system for the agreement and synchronization of protocol updates. When configuring this section, you need to be aware of the latest version of the protocol supported by the network.
 
-The update parameters section might look like this:
-```"ApplicationName": "cardano-sl",
-  "ApplicationVersion": 0,
-  "LastKnownBlockVersion-Alt": 0,
-  "LastKnownBlockVersion-Major": 0,
-  "LastKnownBlockVersion-Minor": 0,
-  ```
+The update parameters section might look like this: \`\`\`"ApplicationName": "cardano-sl", "ApplicationVersion": 0, "LastKnownBlockVersion-Alt": 0, "LastKnownBlockVersion-Major": 0, "LastKnownBlockVersion-Minor": 0,
 
+```text
 *Tracing*
 
 Tracers tell the node what information you are interested in when logging. For example, switches that you can turn ON or OFF according to the type and quantity of information that you are interested in. This provides fairly coarse-grained control, but it is relatively efficient at filtering out unwanted trace output.
@@ -64,6 +61,7 @@ A simple topology file might look like this:
   ]
 }
 ```
+
 **Genesis.json**
 
 The [genesis file](https://github.com/input-output-hk/cardano-tutorials/blob/master/node-setup/understanding-config-files.md#the-genesisjson-file) is generated with the cardano-cli by reading a genesis.spec.json file.

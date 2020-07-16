@@ -1,36 +1,43 @@
 # Command Line Interface
 
-In previous tutorials, we have always worked with command `cardano-node`,
-but when we built the software from source as described [here](000_install.md),
-we actually installed other executables as well, including the command line interface `cardano-cli`.
+In previous tutorials, we have always worked with command `cardano-node`, but when we built the software from source as described [here](https://github.com/carloslodelar/SPO/tree/baec64ba9efba39d4b60b7824fb4d7b962f2c3e7/getting-started/000_install.md), we actually installed other executables as well, including the command line interface `cardano-cli`.
 
-This command line interface provides a collection of tools for key generation, transaction construction, certificate creation
-and other important tasks.
+This command line interface provides a collection of tools for key generation, transaction construction, certificate creation and other important tasks.
 
 It is organized in a hierarchy of subcommands, and each level comes with its own built-in documentation of command syntax and options.
 
 We can get the top level help by simply typing the command without arguments:
 
-        cardano-cli
+```text
+    cardano-cli
+```
 
 We will be told that one available subcommand is `shelley`, and typing
 
-        cardano-cli shelley
+```text
+    cardano-cli shelley
+```
 
 will display available sub-subcommands, one of which is `node`. We can continue drilling down the hierarchy:
 
-        cardano-cli shelley node
+```text
+    cardano-cli shelley node
+```
 
 and learn about the sub-sub-subcommand `key-gen`. Typing
 
-        cardano-cli shelley node key-gen
+```text
+    cardano-cli shelley node key-gen
+```
 
-will inform us about the parameters this command takes, so we can for example generate a key-pair of offline keys and a file for the issue counter
-by typing
+will inform us about the parameters this command takes, so we can for example generate a key-pair of offline keys and a file for the issue counter by typing
 
-        cardano-cli shelley node key-gen \
-            --cold-verification-key-file cold.vkey \
-            --cold-signing-key-file cold.skey \
-            --operational-certificate-issue-counter-file cold.counter
+```text
+    cardano-cli shelley node key-gen \
+        --cold-verification-key-file cold.vkey \
+        --cold-signing-key-file cold.skey \
+        --operational-certificate-issue-counter-file cold.counter
+```
 
-![`cardano-cli` command hierarchy](images/cli.png)
+![\`cardano-cli\` command hierarchy](../.gitbook/assets/cli.png)
+
