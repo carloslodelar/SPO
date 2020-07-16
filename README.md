@@ -4,8 +4,6 @@ description: How to create a stake pool from scratch
 
 # Stake pool initiative
 
-
-
 ### **Syllabus**
 
 1. **Introduction to the Stake Pool Initiative**
