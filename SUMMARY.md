@@ -8,6 +8,7 @@
   * [Command Line Interface](getting-started/cli.md)
   * [Get genesis, config and topology files; start the node](getting-started/getconfigfiles_and_connect.md)
   * [Understanding your configuration files and how to use them:](getting-started/understanding-config-files.md)
+* [Start your nodes:](start_your_nodes.md)
 * [logging-monitoring](logging-monitoring/README.md)
   * [Monitoring a Node with Prometheus](logging-monitoring/prometheus.md)
   * [Adding a Grafana Dashboard to monitor your nodes](logging-monitoring/grafana.md)
@@ -28,5 +29,4 @@
   * [Generate your stake pool keys](stake-pool-operations/node_keys.md)
   * [KES Periods](stake-pool-operations/kes_period.md)
   * [Register stake address in the blockchain](stake-pool-operations/register_key.md)
-  * [Start your nodes:](stake-pool-operations/start_your_nodes.md)
 
