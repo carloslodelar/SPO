@@ -43,19 +43,13 @@ If you do not have access to a computer running Linux, you can use Amazon Web Se
 
 ![Create a key pair.](../.gitbook/assets/key_pair.png)
 
-
-
 * _Connect_ to your instance.
 
-  ![Connect.](../.gitbook/assets/connect.png)
+![Connect.](../.gitbook/assets/connect.png)
 
 * You can use the _EC2 Instance Connect_ connection method.
 
-  ![Choose connection method.](../.gitbook/assets/connect2.png)
-
-* Type `echo hello` \(and Enter\) to try whether the connection works. This should print "hello" to the console.
-
-  ![Trying the console.](../.gitbook/assets/connect3.png)
+![Choose connection method.](../.gitbook/assets/connect2.png)
 
 Congratulations! You have now access to a machine running Linux.
 
