@@ -3,6 +3,7 @@
 * [Stake pool initiative](README.md)
 * [Setting up your node](getting-started/README.md)
   * [Getting access to Linux at AWS](getting-started/aws.md)
+  * [Virtual Box](getting-started/virtual-box.md)
   * [Installing and Running a Node](getting-started/install.md)
   * [Command Line Interface](getting-started/cli.md)
   * [Get genesis, config and topology files; start the node](getting-started/getconfigfiles_and_connect.md)
