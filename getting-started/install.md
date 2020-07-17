@@ -43,7 +43,7 @@ sudo apt-get install build-essential pkg-config libffi-dev libgmp-dev libssl-dev
 
 If you are using a different flavor of Linux, you will need to use the package manager suitable for your platform instead of `yum` or `apt-get`, and the names of the packages you need to install might differ.
 
-Download, unpack, install and update Cabal:
+### Download, unpack, install and update Cabal:
 
 ```text
 wget https://downloads.haskell.org/~cabal/cabal-install-3.2.0.0/cabal-install-3.2.0.0-x86_64-unknown-linux.tar.xz
@@ -60,8 +60,6 @@ echo $PATH
 ```
 
 If .local/bin is not in the PATH, you need to add the following line to  your `.bashrc`file
-
-### Adding ~/.local/bin and ~/.cabal/bin to the PATH
 
 Navigate to your home folder:
 
@@ -99,7 +97,7 @@ Above instructions install Cabal version `3.2.0.0`. You can check the version by
 cabal --version
 ```
 
-Download and install GHC:
+### Download and install GHC:
 
 ```text
 wget https://downloads.haskell.org/~ghc/8.6.5/ghc-8.6.5-x86_64-deb9-linux.tar.xz
@@ -111,7 +109,7 @@ sudo make install
 cd ..
 ```
 
-Install Libsodium
+### Install Libsodium
 
 ```text
 git clone https://github.com/input-output-hk/libsodium
@@ -150,10 +148,10 @@ For reproducible builds, we should check out a specific release, a specific "tag
 ```text
 git fetch --all --tags
 git tag
-git checkout tags/1.15.1
+git checkout tags/1.16.0
 ```
 
-## Build and install the node
+### Build and install the node
 
 Now we build and install the node with `cabal`, which will take a couple of minutes the first time you do a build. Later builds will be much faster, because everything that does not change will be cached.
 
@@ -164,11 +162,11 @@ cabal build all
 Now we can copy the executables files to the .local/bin directory
 
 ```text
-cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-node-1.15.1/x/cardano-node/build/cardano-node/cardano-node ~/.local/bin/
+cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-node-1.16.0/x/cardano-node/build/cardano-node/cardano-node ~/.local/bin/
 ```
 
 ```text
-cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-cli-1.15.1/x/cardano-cli/build/cardano-cli/cardano-cli ~/.local/bin/
+cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-cli-1.16.0/x/cardano-cli/build/cardano-cli/cardano-cli ~/.local/bin/
 ```
 
 ```text
