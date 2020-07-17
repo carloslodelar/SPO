@@ -36,9 +36,12 @@
   * **Pool registration**
   * **Pledge**
 * **Stake pool Maintenance**
+
   * **Renewing KES keys**
   * **Updating pool registration**
   * **Retiring a pool**
   * **Monitoring**
   * **Checking rewards**
+
+  \*\*\*\*
 

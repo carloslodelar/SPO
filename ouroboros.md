@@ -1,3 +1,7 @@
+---
+description: How it works
+---
+
 # Ouroboros Protocol
 
 Blockchains require an agreement mechanism between the participants of the network on how to add new transactions to the ledger and its state at any given moment. This mechanism is known as a consensus protocol.
@@ -26,7 +30,7 @@ So it is not hashing power what gives you the opportunity to produce a new block
 
 Since there is no race to mine a block, there is no waste of energy or computational resources. In that sense, Ouroboros is a more efficient and cheaper protocol to run that Bitcoin’s proof-of-work, while keeping all the security guarantees.
 
-### What if you are not online? \(Stakepools\) <a id="7855"></a>
+### What if you are not online? \(Stake pools\) <a id="7855"></a>
 
 To generate a block you have to be online, but asking everyone to be online at every moment is impractical and unrealistic. This is why Ouroboros introduces the figure of _Stake Delegation_. As stakeholder, you can delegate your stake to a third party to act on your behalf whenever you are elected slot leader.
 
@@ -68,7 +72,7 @@ Finally, the Ouroboros incentives mechanism promotes the decentralization of the
 
 In one hand, a staking pool can only act as a delegate if it represents a certain number of stakeholders whose aggregate stake exceeds a given threshold, for example, 0.1% of all the stake in the blockchain. This prevents a fragmentation attack, where someone tries to affect the performance of the protocol by increasing the delegates population.
 
-At the same time, when the aggregate stake of a stakepool grows beyond a certain threshold, rewards become constant. This makes that particular stakepool less attractive since stakeholders would not be maximizing their rewards. For example, if the threshold is set to 1%, a stakepool with a stake of 2% would gain the same rewards as other that has a stake of only 1%.
+At the same time, when the aggregate stake of a stake pool grows beyond a certain threshold, rewards become constant. This makes that particular stake pool less attractive since stakeholders would not be maximizing their rewards. For example, if the threshold is set to 1%, a stake pool with a stake of 2% would gain the same rewards as other that has a stake of only 1%.
 
 All these functionalities make Ouroboros the best proof of stake ledger protocol to date. And its only implementation is currently in the Cardano blockchain.
 
