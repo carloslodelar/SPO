@@ -88,7 +88,9 @@ The transaction needs one \(1\) input: a valid UTXO from `payment.addr`, and two
    --tx-out-count 2 \
    --witness-count 1 \
    --byron-witness-count 0 \
-   --testnet-magic 42 
+   --testnet-magic 42 \
+   --protocol-params-file protocol.json
+    
    
    > 167965
 ```
