@@ -34,11 +34,9 @@ Since there is no race to mine a block, there is no waste of energy or computati
 
 ### What if you are not online? \(Stake pools\) <a id="7855"></a>
 
-To generate a block you have to be online, but asking everyone to be online at every moment is impractical and unrealistic. This is why Ouroboros introduces the figure of _Stake Delegation_. As stakeholder, you can delegate your stake to a third party to act on your behalf whenever you are elected slot leader.
+To produce a block you have to be online, but asking everyone to be online at every moment is impractical and unrealistic. This is why Ouroboros introduces the figure of _Stake Delegation_. As stakeholder, you can delegate your stake to a third party to act on your behalf whenever you are elected slot leader. Such delegates are known as _staking pools_. They are members of the community that commit to run the protocol on your behalf and to be online close to 100% of the time.
 
-Such delegates are known as _staking pools_. They are members of the community that commit to run the protocol on your behalf and to be online close to 100% of the time.
-
-An important thing to notice is that you only delegate your rights to participate in the protocol, not your actual tokens. Your ADA are still secure and under your control in your wallet, and funds are not locked, you can still make transactions.
+An important thing to notice is that you only delegate your rights to participate in the protocol, not your actual funds. Your ADA are still secure and under your control in your wallet, and funds are not locked, you can still make transactions.
 
 ### What about the incentives? <a id="9175"></a>
 
@@ -48,9 +46,9 @@ Rewards come from two sources: transaction fees and funds drawn from the Ada Res
 
 In Ouroboros, incentives are not block-dependant, instead, rewards from an epoch are collected in a pool and distributed among the stakeholders and stake pools that participated during these slots proportional to their stake.
 
-In the case of stake pools, the pool leader gets a fraction of the rewards to cover his operational costs and a profit margin. The rest is distributed among the pool members, including the pool leader, proportionally to the stake that they contributed to the pool.
+In the case of stake pools, those get a fraction of the rewards to cover operational costs and a profit margin. The rest is distributed among the pool members, including the pool owners, proportionally to the stake that they contributed to the pool.
 
-You can choose a different staking pool or choose to act on your own at any moment.
+To participate in the protocol, you can choose a staking pool or choose to act on your own at any moment creating your own stake pool.
 
 ### What if for some reason there is a fork? <a id="4d6a"></a>
 
