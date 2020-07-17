@@ -4,6 +4,8 @@ description: How it works
 
 # Ouroboros Protocol
 
+## Consensus
+
 Blockchains require an agreement mechanism between the participants of the network on how to add new transactions to the ledger and its state at any given moment. This mechanism is known as a consensus protocol.
 
 The goal of the consensus protocol is to ensure that only one chain is adopted and followed, otherwise, the system would collapse immediately.
