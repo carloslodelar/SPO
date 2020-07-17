@@ -2,7 +2,7 @@
 
 ## Install grafana
 
-1. Download and install Grafana on your local machine or in your monitoring server: [Grafana](https://grafana.com/grafana/download)
+Download and install Grafana on your local machine or in your monitoring server: [Grafana](https://grafana.com/grafana/download)
 
 The Grafana backend has a number of configuration options defined in its config file \(usually located at /etc/grafana/grafana.ini on linux systems\). Grafana uses port 3000 as default, change it if needed and make sure to configure your firewall accordingly.
 
@@ -22,7 +22,7 @@ sudo /bin/systemctl start grafana-server
 
 ## Configuring your dashboard
 
-1. On your local machine you can now go to  a.b.c.d:3000
+On your local machine you can now go to  a.b.c.d:3000
 
 You will see this, default user and password are admin/admin.
 

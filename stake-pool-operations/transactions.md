@@ -31,7 +31,7 @@ Creating a transaction is a process that requires various steps:
 * Sign the transaction
 * Submit the transaction
 
-## Get protocol parameters
+### Get protocol parameters
 
 Get the protocol parameters and save them to `protocol.json` with:
 
@@ -41,39 +41,59 @@ Get the protocol parameters and save them to `protocol.json` with:
    --out-file protocol.json
 ```
 
-## Define the TTL \(time to Live\) for the transaction
+### Determine the TTL \(time to Live\) for the transaction
 
 We need the CURRENT TIP of the blockchain, this is, the height of the last block produced. We are looking for the value of `unSlotNo`
 
 ```text
 cardano-cli shelley query tip --testnet-magic 42
 
-> Tip (SlotNo {unSlotNo = 795346}) (ShelleyHash {unShelleyHash = HashHeader {unHashHeader =        6a28a1c9fac321d7f4c8df8de68ee17f1967695460b5b422c93e6faaeeaf5cf2}}) (BlockNo {unBlockNo = 33088})
+{
+    "blockNo": 16829,
+    "headerHash": "3e6f59b10d605e7f59ba8383cb0ddcd42480ddcc0a85d41bad1e4648eb5465ad",
+    "slotNo": 369215
+}
 ```
 
 So at this moment the tip is on block 795346.
 
 To build the transaction we need to specify the **TTL \(Time to live\)**, this is the block height limit for our transaction to be included in a block, if it is not in a block by that slot the transaction will be cancelled.
 
-From `protocol.json` we know that we have 1 slot per second. Lets say that it will take us 10 minutes to build the transaction, and that we want to give it another 10 minutes window to be included in a block. So we need 20 minutes or 1200 slots. So we add 1200 to the current tip: 795346 + 1200 = 796546. So our TTL is 796546.
+From `protocol.json` we know that we have 1 slot per second. Lets say that it will take us 10 minutes to build the transaction, and that we want to give it another 10 minutes window to be included in a block. So we need 20 minutes or 1200 slots. So we add 1200 to the current tip: 795346 + 1200 = 796546. So our TTL is 796546
 
-## Calculate the fee
+### Draft the transaction
 
-The transaction needs one \(1\) input: a valid UTXO from `payment.addr`, and two \(2\) outputs: The receiving address **payment2.addr** and an address to send the change back, in this case we use **payment.addr**
+We create a draft for the transaction and save it in tx.raw
+
+Note that for `--tx-in` we use the following syntax: `TxId#TxIx` where `TxId` is the transaction hash and `TxIx` is the index and for `--tx-out` we use: `TxOut+Lovelace` where `TxOut` is the hex encoded address followed by the amount in `Lovelace`.
+
+```text
+cardano-cli shelley transaction build-raw \
+--tx-in 4e3a6e7fdcb0d0efa17bf79c13aed2b4cb9baf37fb1aa2e39553d5bd720c5c99#4 \
+--tx-out $(cat payment2.addr)+100000000 \
+--tx-out $(cat payment.addr)+0 \
+--ttl 0 \
+--fee 0 \
+--out-file tx.raw
+```
+
+### Calculate the fee
+
+The transaction needs one \(1\) input: a valid UTXO from `payment.addr`, and two \(2\) outputs: The receiving address **payment2.addr** and an address to send the change back, in this case we use **payment.addr.**  You also need to include the **Draft transaction file. Witnesses** are ****number of signing keys used to sign the transaction.
 
 ```text
    cardano-cli shelley transaction calculate-min-fee \
+   --tx-body-file tx.raw \
    --tx-in-count 1 \
    --tx-out-count 2 \
-   --ttl 796546 \
-   --testnet-magic 42 \
-   --signing-key-file payment.skey \
-   --protocol-params-file protocol.json
-
+   --witness-count 1 \
+   --byron-witness-count 0 \
+   --testnet-magic 42 
+   
    > 167965
 ```
 
-\(The `--testnet-magic 42` identifies the Shelley Testnet. Other testnets will use other numbers, and mainnet uses `--mainnet` instead.\)
+\(`--testnet-magic 42` identifies the Shelley Testnet. Other testnets will use other numbers, and mainnet uses `--mainnet` instead.\)
 
 So we need to pay **167965 lovelace** fee to create this transaction.
 
@@ -89,15 +109,15 @@ We need the transaction hash and index of the **UTXO** we want to spend:
 
 ```text
 cardano-cli shelley query utxo \
-    --address $(cat payment.addr) \
-    --testnet-magic 42
+--address $(cat payment.addr) \
+--testnet-magic 42
 
 >                            TxHash                                 TxIx        Lovelace
 > ----------------------------------------------------------------------------------------
 > 4e3a6e7fdcb0d0efa17bf79c13aed2b4cb9baf37fb1aa2e39553d5bd720c5c99     4     1000000000000
 ```
 
-## Build the transaction
+### Build the transaction
 
 We write the transaction in a file, we will name it `tx.raw`.
 
@@ -113,7 +133,7 @@ cardano-cli shelley transaction build-raw \
 --out-file tx.raw
 ```
 
-## Sign the transaction
+### Sign the transaction
 
 Sign the transaction with the signing key **payment.skey** and save the signed transaction in **tx.signed**
 
@@ -125,7 +145,7 @@ cardano-cli shelley transaction sign \
 --out-file tx.signed
 ```
 
-## Submit the transaction
+### Submit the transaction
 
 Make sure that your node is running and set CARDANO\_NODE\_SOCKET\_PATH variable to:
 
@@ -141,7 +161,7 @@ cardano-cli shelley transaction submit \
         --testnet-magic 42
 ```
 
-## Check the balances
+### Check the balances
 
 We must give it some time to get incorporated into the blockchain, but eventually, we will see the effect:
 

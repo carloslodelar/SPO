@@ -28,8 +28,7 @@ description: How to create a stake pool from scratch
   * **UTxO model**
   * **Payment keys and addresses**
   * **Using the faucet**
-  * **Calculating fees**
-  * **Creating and submitting the transaction**
+  * **Fees, creating and submitting the transaction**
 * **Stake Addresses and Delegation**
   * **Stake keys**
   * **Stake addresses**

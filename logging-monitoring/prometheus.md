@@ -4,7 +4,7 @@
 
    You can find the link in the _Instances_ dashboard of the AWS console
 
-   ![Launch Wizard](../.gitbook/assets/launch-wizard.png)
+![Launch Wizard](../.gitbook/assets/launch-wizard.png)
 
 Click "Edit inbound rules".
 

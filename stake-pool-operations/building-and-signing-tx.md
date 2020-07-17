@@ -59,6 +59,21 @@ cardano-cli shelley query protocol-parameters \
 --out-file FILE          Optional output file. Default is to write to stdout.
 ```
 
+```text
+cardano-cli shelley transaction calculate-min-fee \
+
+  --tx-body-file FILE      Input filepath of the TxBody.
+  --mainnet                Use the mainnet magic id.
+  --testnet-magic NATURAL  Specify a testnet magic id.
+  --protocol-params-file FILE
+                           Filepath of the JSON-encoded protocol parameters file
+  --tx-in-count NATURAL    The number of transaction inputs.
+  --tx-out-count NATURAL   The number of transaction outputs.
+  --witness-count NATURAL  The number of Shelley key witnesses.
+  --byron-witness-count NATURAL
+                           The number of Byron key witnesses.
+```
+
 **Signing a transaction**
 
 A transaction must prove that it has the right to spend its inputs. In the most common case, this means that a transaction must be signed by the signing keys belonging to the payment addresses of the inputs. If a transaction contains certificates, it must additionally be signed by somebody with the right to issue those certificates. For example, a stake address registration certificate must be signed by the signing key of the corresponding stake key pair.
