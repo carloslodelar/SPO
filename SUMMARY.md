@@ -1,6 +1,8 @@
 # Table of contents
 
 * [Stake pool initiative](README.md)
+* [Syllabus](syllabus.md)
+* [Ouroboros Protocol](ouroboros.md)
 * [Setting up your node](getting-started/README.md)
   * [Virtual Box](getting-started/virtual-box.md)
   * [Getting access to Linux at AWS](getting-started/aws.md)
@@ -12,7 +14,7 @@
   * [Start your node](start_your_nodes/start-your-node.md)
 * [Transactions](stake-pool-operations/README.md)
   * [UTxO model](stake-pool-operations/utxo-model.md)
-  * [Creating keys and addresses](stake-pool-operations/keys_and_addresses.md)
+  * [Generate payment keys and addresses](stake-pool-operations/keys_and_addresses.md)
   * [Building and signing transactions](stake-pool-operations/building-and-signing-tx.md)
   * [Create a simple transaction](stake-pool-operations/transactions.md)
   * [Diagnosing transactions problems and troubleshooting](stake-pool-operations/diagnosing-transactions.md)

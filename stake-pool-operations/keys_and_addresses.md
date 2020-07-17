@@ -1,33 +1,33 @@
-# Creating keys and addresses
+# Generate payment keys and addresses
 
-We need to create two sets of keys and addresses: One set to control our funds \(make and receive payments\) and one set to control our stake \(to participate in the protocol delegating our stake\)
+We need to create two sets of keys and addresses. One set to control our funds \(make and receive payments\) and one set to control our stake \(to participate in the protocol delegating our stake\)
 
 Let's produce our cryptographic keys first, as we will need them to later create our addresses:
 
 ### Payment key pair
 
-1. First we need to generate our _payment key pair_:
+Generate a _payment key pair_:
 
-   ```text
-    cardano-cli shelley address key-gen \
-    --verification-key-file payment.vkey \
-    --signing-key-file payment.skey
-   ```
+```text
+ cardano-cli shelley address key-gen \
+ --verification-key-file payment.vkey \
+ --signing-key-file payment.skey
+```
 
-   This will create two files \(here named `payment.vkey` and `payment.skey`\), one containing the _public verification key_, one the _private signing key_.
+This will create two files \(here named `payment.vkey` and `payment.skey`\), one containing the _public verification key_, one the _private signing key_.
 
-   The files are in plain-text format and human readable:
+The files are in plain-text format and human readable:
 
-   ```text
-    cat payment.vkey
+```text
+ cat payment.vkey
 
-    > type: VerificationKeyShelley
-    > title: Free form text
-    > cbor-hex:
-    >  18af58...
-   ```
+ > type: VerificationKeyShelley
+ > title: Free form text
+ > cbor-hex:
+ >  18af58...
+```
 
-   The first line describes the file type and should not be changed. The second line is a free form text that we could change if we so wished. The key itself is the cbor-encoded byte-string in the fourth line.
+The first line describes the file type and should not be changed. The second line is a free form text that we could change if we so wished. The key itself is the cbor-encoded byte-string in the fourth line.
 
 ### Payment address
 
