@@ -145,12 +145,12 @@ We change our working directory to the downloaded source code folder:
 cd cardano-node
 ```
 
-For reproducible builds, we should check out a specific release, a specific "tag". For the Shelley Testnet, we will use tag `1.16.0`, which we can check out as follows:
+For reproducible builds, we should check out a specific release, a specific "tag". For the Shelley Testnet, we will use tag `1.15.1`, which we can check out as follows:
 
 ```text
 git fetch --all --tags
 git tag
-git checkout tags/1.16.0
+git checkout tags/1.15.1
 ```
 
 ### Build and install the node
@@ -164,11 +164,11 @@ cabal build all
 Now we can copy the executables files to the .local/bin directory
 
 ```text
-cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-node-1.16.0/x/cardano-node/build/cardano-node/cardano-node ~/.local/bin/
+cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-node-1.15.1/x/cardano-node/build/cardano-node/cardano-node ~/.local/bin/
 ```
 
 ```text
-cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-cli-1.16.0/x/cardano-cli/build/cardano-cli/cardano-cli ~/.local/bin/
+cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-cli-1.15.1/x/cardano-cli/build/cardano-cli/cardano-cli ~/.local/bin/
 ```
 
 ```text
