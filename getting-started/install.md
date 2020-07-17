@@ -145,7 +145,7 @@ We change our working directory to the downloaded source code folder:
 cd cardano-node
 ```
 
-For reproducible builds, we should check out a specific release, a specific "tag". For the Shelley Testnet, we will use tag `1.15.1`, which we can check out as follows:
+For reproducible builds, we should check out a specific release, a specific "tag". For the Shelley Testnet, we will use tag `1.16.0`, which we can check out as follows:
 
 ```text
 git fetch --all --tags
