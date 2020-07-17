@@ -1,7 +1,3 @@
----
-description: Install virtual box and run a virtual Machine with ubuntu 20.04
----
-
 # Virtual Box
 
 You can also use Virtual box to create a Virtual Machine to host you Linux system.   
