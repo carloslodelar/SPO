@@ -112,15 +112,11 @@ All these functionalities make Ouroboros the best proof of stake ledger protocol
 
 A key aspect of the procedure described above is that from time to time, it will produce slots without a slot leader and slots with multiple slot leaders. Meaning that nodes might receive valid chains from multiple sources. To determine which chain to adopt, each party collects all valid chains and applies the Chain Selection Rule. The same thing is done by users that have been offline for a while and need to synchronize with the blockchain.
 
-First, the user refers to the global clock to make sure that all time relevant parameters, epoch, slot, etc., are up-to-date.
+The node filters all valid chains \(chains whose signatures are consistent with the genesis block and with the keys recorded in the Key Evolving Signature protocol, the variable random function and the global random oracle.
 
-Then filters all valid chains \(chains whose signatures are consistent with the genesis block and with the keys recorded in the Key Evolving Signature protocol, the variable random function and the global random oracle.
-
-Finally, applies the Chain Selection Rule: pick the longest chain as long as it grows more quickly \(is denser\) in the slots following the last common block to both competing chains.
+Then applies the Chain Selection Rule: pick the longest chain as long as it grows more quickly \(is denser\) in the slots following the last common block to both competing chains.
 
 This chain selection rule allows for a party that joins the network at any time to synchronize with the correct blockchain, based only on a trusted copy of the genesis block and by observing how the chain grows for a sufficient time.
-
-Note: This procedure describes Ouroboros Genesis as it is in the original paper. The actual implementation in Cardano blockchain may change or be adapted.
 
 ## Reference material.
 
