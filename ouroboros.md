@@ -78,7 +78,7 @@ All these functionalities make Ouroboros the best proof of stake ledger protocol
 
 ![Ouroboros protocol](.gitbook/assets/ouroborosprotocol-blueprint-vertical.jpg)
 
-## How does it work? <a id="9621"></a>
+## How it works <a id="9621"></a>
 
 1. **Time** is divided into epochs and slots and begins at Genesis. At most one block is produced in every slot. Only the slot leader can sign a block for a particular slot.
 
