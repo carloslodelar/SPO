@@ -17,6 +17,7 @@
 * [Transactions](stake-pool-operations/README.md)
   * [UTxO model](stake-pool-operations/utxo-model.md)
   * [Generate payment keys and addresses](stake-pool-operations/keys_and_addresses.md)
+  * [Using the faucet](stake-pool-operations/using-the-faucet.md)
   * [Building and signing transactions](stake-pool-operations/building-and-signing-tx.md)
   * [Create a simple transaction](stake-pool-operations/transactions.md)
   * [Diagnosing transactions problems and troubleshooting](stake-pool-operations/diagnosing-transactions.md)
