@@ -64,13 +64,13 @@ If .local/bin is not in the PATH, you need to add the following line to  your `.
 Navigate to your home folder:
 
 ```text
-$ cd
+cd
 ```
 
 Open your .bashrc file with nano text editor
 
 ```text
-$ nano .bashrc
+nano .bashrc
 ```
 
 Go to the bottom of the file and add the following lines
