@@ -124,7 +124,7 @@ This chain selection rule allows for a party that joins the network at any time 
 
 Note: This procedure describes Ouroboros Genesis as it is in the original paper. The actual implementation in Cardano blockchain may change or be adapted.
 
-Reference material.
+## Reference material.
 
 [OUROBOROS](https://eprint.iacr.org/2016/889.pdf)
 
