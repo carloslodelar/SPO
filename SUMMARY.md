@@ -5,7 +5,7 @@
 * [Ouroboros Protocol](ouroboros.md)
 * [Setting up your node](getting-started/README.md)
   * [Virtual Box](getting-started/virtual-box.md)
-  * [Getting access to Linux at AWS](getting-started/aws.md)
+  * [Configure a Linux server on AWS](getting-started/aws.md)
   * [Installing and Running a Node](getting-started/install.md)
   * [Command Line Interface](getting-started/cli.md)
   * [Get configuration files](getting-started/getconfigfiles_and_connect.md)
