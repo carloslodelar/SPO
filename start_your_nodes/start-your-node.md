@@ -42,7 +42,7 @@ Create the environment variable CARDANO\_NODE\_SOCKET\_PATH
 export CARDANO_NODE_SOCKET_PATH=~/relay/db/node.socket
 ```
 
-Check whether the node is syncing by fetching the current tip, `--testnet-magic 42` identifies the Shelley testnet a couple of times, `slotNo` should be increasing:
+Check whether the node is syncing by fetching the current tip,  a couple of times, `slotNo` should be increasing. `--testnet-magic 42` identifies the Shelley testnet
 
 ```text
 cardano-cli shelley query tip --testnet-magic 42
