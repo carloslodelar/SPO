@@ -15,6 +15,7 @@
 * [The UTxO model](video-lessons/utxo.md)
 * [Generate Payment keys and addresses](video-lessons/payment-keys-and-address.md)
 * [Request funds to the faucet](video-lessons/faucet.md)
+* [Simple transaction](video-lessons/transaction.md)
 
 ## STAKE POOL HANDBOOK <a id="stake-pool-guide"></a>
 
