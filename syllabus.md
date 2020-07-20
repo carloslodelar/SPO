@@ -1,5 +1,13 @@
 # Syllabus
 
+### 
+
+### What you will learn:
+
+{% embed url="https://youtu.be/Jb08HTkk7yo" %}
+
+\*\*\*\*
+
 * **Introduction to the Stake Pool Initiative**
   * **Welcome**
   * **Goals**
