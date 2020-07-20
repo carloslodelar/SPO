@@ -15,7 +15,6 @@ To generate **payment2.addr** we can use the same stake key pair that we already
 ```text
 cardano-cli shelley address build \
 --payment-verification-key-file payment2.vkey \
---stake-verification-key-file stake.vkey \
 --out-file payment2.addr \
 --testnet-magic 42
 ```
