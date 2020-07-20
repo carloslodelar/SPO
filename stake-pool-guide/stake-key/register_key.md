@@ -23,19 +23,28 @@ Once the certificate has been created, we must include it in a transaction to po
 
 As before, to create the transaction you need to determine the TTL querying the tip and adding some slots to give you sufficient time to build the transaction.
 
+## Draft transaction 
+
+```text
+cardano-cli shelley transaction build-raw \
+--tx-in b64ae44e1195b04663ab863b62337e626c65b0c9855a9fbb9ef4458f81a6f5ee#1 \
+--tx-out $(cat payment.addr)+0 \
+--ttl 0 \
+--fee 0 \
+--out-file tx.raw \
+--certificate-file stake.cert
+```
+
 ## Calculate fees and deposit
 
 This transaction has only 1 input \(the UTXO used to pay the transaction fee\) and 1 output \(our payment.addr to which we are sending the change\). This transaction has to be signed by both the payment signing key `payment.skey` and the stake signing key `stake.skey`; and includes the certificate `stake.cert`:
 
 ```text
 cardano-cli shelley transaction calculate-min-fee \
+--tx-body-file tx.raw
 --tx-in-count 1 \
 --tx-out-count 1 \
---ttl 987654 \
 --testnet-magic 42 \
---signing-key-file payment.skey \
---signing-key-file stake.skey \
---certificate-file stake.cert \
 --protocol-params-file protocol.json
 
 > 171485
