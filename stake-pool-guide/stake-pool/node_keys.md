@@ -4,7 +4,7 @@ A stake pool needs at least 2 running nodes: A **block-producing** node and a **
 
 We need to setup our **block-producing** node. You can build the node from source or maintain a single build on your local machine and only upload the binaries to your **block-producing** and **relay** servers. Just make sure you have consistent versions across them.
 
-![network diagram](../.gitbook/assets/basic-network-with-relays-producers-passivenodes-walletnodes.png)
+![network diagram](../../.gitbook/assets/basic-network-with-relays-producers-passivenodes-walletnodes.png)
 
 The **block-producing** node will only connect with it's **relay**, while the **relay** will establish connections with other relays in the network. Each node must run in an independent server.
 

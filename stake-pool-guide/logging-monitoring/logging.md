@@ -64,5 +64,5 @@ For example, if we want to activate logging for all subsystems related to block 
 
 It is also possible to exert more fine-grained control on what information to log, but we will not cover this in this tutorial.
 
-![Severities](../.gitbook/assets/severity.png)
+![Severities](../../.gitbook/assets/severity.png)
 

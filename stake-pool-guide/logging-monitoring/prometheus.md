@@ -4,15 +4,15 @@
 
    You can find the link in the _Instances_ dashboard of the AWS console
 
-![Launch Wizard](../.gitbook/assets/launch-wizard.png)
+![Launch Wizard](../../.gitbook/assets/launch-wizard.png)
 
 Click "Edit inbound rules".
 
-![Edit inbound rules](../.gitbook/assets/edit-inbound-rules.png)
+![Edit inbound rules](../../.gitbook/assets/edit-inbound-rules.png)
 
 Then add a new rule for "Custom TCP", port range 12789, source "Anywhere".
 
-![new inbound rules](../.gitbook/assets/new-inbound-rule.png)
+![new inbound rules](../../.gitbook/assets/new-inbound-rule.png)
 
 1. On the AWS instance we edit the node configuration file shelley\_testnet-config.json providing the host and port:
 
@@ -59,7 +59,7 @@ Then add a new rule for "Custom TCP", port range 12789, source "Anywhere".
 
 7. On your browser open `a.b.c.d:9090`, pick one or more interesting metrics to graph and enjoy!
 
-   ![Prometheus](../.gitbook/assets/prometheus.png)
+   ![Prometheus](../../.gitbook/assets/prometheus.png)
 
 \*\*NOTE: Security configurations you should perform on your monitoring server are out of scope for this tutorial.
 

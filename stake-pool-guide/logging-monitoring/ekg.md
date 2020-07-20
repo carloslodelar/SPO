@@ -69,7 +69,7 @@ We then restart the node as explained above.
 
 On our local machine, we can go to `127.0.0.1:12788` in our browser and see the EKG monitoring information.
 
-![EKG in the browser.](../.gitbook/assets/ekg.png)
+![EKG in the browser.](../../.gitbook/assets/ekg.png)
 
 
 
