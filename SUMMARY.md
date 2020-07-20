@@ -11,6 +11,9 @@
 * [Setup a server on AWS](video-lessons/aws.md)
 * [Installing cardano-node](video-lessons/installing.md)
 * [Get configuration files and run the node](video-lessons/config-files-run-node.md)
+* [Using the cardano-cli](video-lessons/cli.md)
+* [The UTxO model](video-lessons/utxo.md)
+* [Generate Payment keys and addresses](video-lessons/payment-keys-and-address.md)
 
 ## STAKE POOL HANDBOOK <a id="stake-pool-guide"></a>
 
