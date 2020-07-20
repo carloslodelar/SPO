@@ -7,7 +7,7 @@
 ## SETTING UP A STAKE POOL VIDEO LESSONS <a id="video-lessons"></a>
 
 * [Introduction to Cardano](video-lessons/introduction-to-cardano.md)
-* [Virtual Box Lesson](video-lessons/vb.md)
+* [Installing VirtualBox](video-lessons/vb.md)
 * [Setup a server on AWS](video-lessons/aws.md)
 * [Installing cardano-node](video-lessons/installing.md)
 
