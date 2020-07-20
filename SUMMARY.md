@@ -10,6 +10,7 @@
 * [Installing VirtualBox](video-lessons/vb.md)
 * [Setup a server on AWS](video-lessons/aws.md)
 * [Installing cardano-node](video-lessons/installing.md)
+* [Get configuration files and run the node](video-lessons/config-files-run-node.md)
 
 ## STAKE POOL HANDBOOK <a id="stake-pool-guide"></a>
 
