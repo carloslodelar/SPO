@@ -1,7 +1,8 @@
 # Virtual Box
 
-You can also use Virtual box to create a Virtual Machine to host you Linux system.   
+In order to build a node from source, run it and connect it to the Cardano mainnet, you need a Linux system with at least 4GB RAM and 24GB hard drive space. The RAM is mostly needed for _building_ the node; for _running_ it, 1GB would be sufficient. The hard drive space is necessary if you want to connect to and download the Cardano blockchain. 
 
+You can use VirtualBox to learn how to set up stake pool. 
 
 ### Install Virtual Box: 
 
