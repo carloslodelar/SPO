@@ -1,6 +1,6 @@
 # bash cheat sheet
 
-{% embed url="https://gist.github.com/LeCoupa/122b12050f5fb267e75f" %}
+{% embed url="https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html" %}
 
 
 
