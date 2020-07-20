@@ -28,7 +28,7 @@ As before, to create the transaction you need to determine the TTL querying the 
 ```text
 cardano-cli shelley transaction build-raw \
 --tx-in b64ae44e1195b04663ab863b62337e626c65b0c9855a9fbb9ef4458f81a6f5ee#1 \
---tx-out $(cat payment.addr)+0 \
+--tx-out $(cat paymentwithstake.addr)+0 \
 --ttl 0 \
 --fee 0 \
 --out-file tx.raw \
