@@ -43,6 +43,6 @@
 
 ## Additional material
 
-* [tmux](additional-material/tmux.md)
+* [tmux guide](additional-material/tmux.md)
 * [bash cheat sheet](additional-material/bash.md)
 
