@@ -4,7 +4,7 @@
 * [Syllabus](syllabus.md)
 * [Ouroboros Protocol](ouroboros.md)
 
-## VIDEO LESSONS
+## SETTING UP A STAKE POOL VIDEO LESSONS <a id="video-lessons"></a>
 
 * [Virtual Box Lesson](video-lessons/vb.md)
 * [Untitled](video-lessons/untitled.md)
