@@ -41,3 +41,8 @@
   * [Making a Shelley blockchain from scratch](reference/shelley-genesis.md)
   * [Cardano Node CLI Reference](reference/cardano-node-cli-reference.md)
 
+## Additional material
+
+* [tmux](additional-material/tmux.md)
+* [bash cheat sheet](additional-material/bash.md)
+
