@@ -8,9 +8,13 @@ description: >-
 # Assignement-2
 
 1. Create a second server on AWS or Virtual Machine in Virtual Box. This one will host core node.
-2. Create the directory .local/bin and add it to the PATH 
-3. Use `scp` to copy `cardano-node` and `cardano-cli` binaries to this new server. 
-4. Alternatively follow  [Installing and running a node ](../getting-started/install-node.md)again to build the node from source in your new server or Virtual Machine. 
+2. Install dependencies
+3. Install cabal 
+4. Install GHC 
+5. Install libsodium 
+6. Create the directory .local/bin and add it to the PATH 
+7. Use `scp` to copy `cardano-node` and `cardano-cli` binaries to this new server. 
+8. Alternatively follow  [Installing and running a node ](../getting-started/install-node.md)again to build the node from source in your new server or Virtual Machine. 
 
 {% hint style="info" %}
 In any case it is important to make sure that your core and relay nodes run the exact same version of the node. So make sure to update both whenever you have to update to a newer version of the cardano-node. 
