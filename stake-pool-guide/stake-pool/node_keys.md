@@ -80,15 +80,24 @@ We can use your relay node to query the tip:
 
 ```text
 cardano-cli shelley query tip --testnet-magic 42
-> Tip (SlotNo {unSlotNo = 432571}) ...
+
+{
+    "blockNo": 27470,
+    "headerHash": "bd954e753c1131a6cb7ab3a737ca7f78e2477bea93db54511cedefe8899ebed0",
+    "slotNo": 656260
+}
 ```
 
-Look for Tip `unSlotNo` value. In this example we are on slot 432571. So we have KES period is 120:
+Look for Tip `unSlotNo` value. In this example we are on slot 656260. So we have KES period is 182:
 
 ```text
-expr 432571 / 3600
-> 120
+expr 656260 / 3600
+> 182
 ```
+
+{% hint style="info" %}
+`slotNo` and `Kes-period` will be different when you run this commands. So make sure to calculate them yourself. 
+{% endhint %}
 
 To generate the certificate:
 
@@ -105,9 +114,9 @@ cardano-cli shelley node issue-op-cert \
 
 The best place for your cold keys is a **SECURE USB** or other **SECURE EXTERNAL DEVICE**, not a computer with internet access.
 
-## Copy the files to the server:
+## Copy your cold keys from your server to your local machine and from them to COLD storage. 
 
-Copy your VRF keys, KES Keys, and Operational Certificate to your **block-producing** server. For example:
+You can do this with scp command. 
 
 ```text
 scp -rv -P<SSH PORT> -i ~/.ssh/<SSH_PRIVATE_KEY> ~/pool-keys USER@<PUBLIC_IP>:~/

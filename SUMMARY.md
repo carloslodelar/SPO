@@ -66,4 +66,5 @@
 
 * [bash cheat sheet](additional-material/bash.md)
 * [tmux guide](additional-material/tmux.md)
+* [scp command usage](additional-material/scp-command-usage.md)
 

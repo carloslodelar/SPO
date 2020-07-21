@@ -1,6 +1,6 @@
 # KES Periods
 
-We saw in the [last tutorial](https://github.com/carloslodelar/SPO/tree/baec64ba9efba39d4b60b7824fb4d7b962f2c3e7/stake-pool-operations/060_node_keys.md) that in order to create an operational certificate for a block-producing node, you need to create a _KES key pair_.
+To create an operational certificate for a block-producing node, you need to create a _KES key pair_.
 
 Here "KES" stands for _**K**ey **E**volving **S**ignature_, which means that after a certain _period_, the key will _evolve_ to a new key and discard its old version. This is useful, because it means that even if an attacker compromises the key and gets access to the signing key, he can only use that to sign blocks _from now on_, but not blocks dating from _earlier periods_, making it impossible for the attacker to rewrite history.
 
@@ -22,14 +22,19 @@ Before we can create an operational certificate for our node, we need to figure 
 ```text
 export CARDANO_NODE_SOCKET_PATH=~/cardano-node/relay/db/node.socket
 cardano-cli shelley query tip --testnet-magic 42
-> Tip (SlotNo {unSlotNo = 432571}) ...
+
+{
+    "blockNo": 27470,
+    "headerHash": "bd954e753c1131a6cb7ab3a737ca7f78e2477bea93db54511cedefe8899ebed0",
+    "slotNo": 656260
+}
 ```
 
-In this example, we are currently in slot 432571, and we know from the genesis file that one period lasts for 3600 slots. So we calculate the current period by
+In this example, we are currently in slot 656260, and we know from the genesis file that one period lasts for 3600 slots. So we calculate the current period by
 
 ```text
-expr 432571 / 3600
-> 120
+expr 656260 / 3600
+> 182
 ```
 
 With this we are able to generate an operational certificate for our stake pool \(assuming the same file names as [here](https://github.com/carloslodelar/SPO/tree/baec64ba9efba39d4b60b7824fb4d7b962f2c3e7/stake-pool-operations/060_node_keys.md)\):
@@ -39,7 +44,7 @@ cardano-cli shelley node issue-op-cert \
     --kes-verification-key-file kes.vkey \
     --cold-signing-key-file cold.skey \
     --operational-certificate-issue-counter cold.counter \
-    --kes-period 120 \
+    --kes-period 182 \
     --out-file node.cert
 ```
 
