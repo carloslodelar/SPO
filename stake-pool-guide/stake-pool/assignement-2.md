@@ -1,3 +1,10 @@
+---
+description: >-
+  As explained before, core and relay nodes must run in separate machines. In
+  this assignment you will create a second server or Virtual Machine to host
+  your core node.
+---
+
 # Assignement-2
 
 1. Create a second server on AWS or Virtual Machine in Virtual Box. This one will host core node.
