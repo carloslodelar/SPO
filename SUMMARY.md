@@ -4,7 +4,7 @@
 * [Syllabus](syllabus.md)
 * [Ouroboros Protocol](ouroboros.md)
 
-## SETTING UP A STAKE POOL VIDEO LESSONS <a id="video-lessons"></a>
+## VIDEO LESSONS
 
 * [Introduction to Cardano](video-lessons/introduction-to-cardano.md)
 * [Installing VirtualBox](video-lessons/vb.md)
