@@ -4,6 +4,8 @@ As described in the image below, every block producer node needs to be connected
 
 In the other hand your relay nodes can \(and should\) be connected to other relay nodes in the network. 
 
+Each node must run in its own dedicated machine or server. 
+
 
 
 ![Network topology](../../.gitbook/assets/basic-network-with-relays-producers-passivenodes-walletnodes.png)
