@@ -112,10 +112,10 @@ The best place for your cold keys is a **SECURE USB** or other **SECURE EXTERNAL
 
 ### Copy the cold keys from your server to your local machine and from there to COLD storage. 
 
-You can do this with scp command. 
+For example:
 
 ```text
-scp -rv -P<SSH PORT> -i ~/.ssh/<SSH_PRIVATE_KEY> ~/pool-keys USER@<PUBLIC_IP>:~/
+scp -i " file.pem" remote_username@10.10.0.2:~/poolkeys/cold* /local/directory
 
 > Transferred: sent 3220, received 6012 bytes, in 1.2 seconds
 Bytes per second: sent 2606.6, received 4866.8
