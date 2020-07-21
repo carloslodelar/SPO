@@ -32,13 +32,13 @@ cat stake.addr
 
 ### Regenerate payment address
 
-1. We then use `payment.vkey` and `stake.vkey` to create our `payment address`:
+Now that we have a stake address, it is time to regenerate a payment address. This time we use both the stake verification key and payment verification key to build the address. With this, both addresses will be linked together and associated with one another. 
 
-   ```text
-    cardano-cli shelley address build \
-    --payment-verification-key-file payment.vkey \
-    --stake-verification-key-file stake.vkey \
-    --out-file paymentwithstake.addr \
-    --testnet-magic 42
-   ```
+```text
+ cardano-cli shelley address build \
+ --payment-verification-key-file payment.vkey \
+ --stake-verification-key-file stake.vkey \
+ --out-file paymentwithstake.addr \
+ --testnet-magic 42
+```
 

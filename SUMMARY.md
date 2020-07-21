@@ -16,6 +16,8 @@
 * [Generate Payment keys and addresses](video-lessons/payment-keys-and-address.md)
 * [Request funds to the faucet](video-lessons/faucet.md)
 * [Simple transaction](video-lessons/transaction.md)
+* [Stake Keys and address](video-lessons/stake-keys-and-address.md)
+* [Regsiter stake key to the blockchain](video-lessons/register-stake-key.md)
 
 ## STAKE POOL HANDBOOK <a id="stake-pool-guide"></a>
 
@@ -38,6 +40,7 @@
   * [Diagnosing transactions problems and troubleshooting](stake-pool-guide/stake-pool-operations/diagnosing-transactions.md)
 * [Stake Keys and Delegation](stake-pool-guide/stake-key/README.md)
   * [Generate stake keys and address](stake-pool-guide/stake-key/generate-stake-keys-and-address.md)
+  * [Assignment 1](stake-pool-guide/stake-key/assignment-1.md)
   * [Register stake address in the blockchain](stake-pool-guide/stake-key/register_key.md)
   * [Delegate to a pool](stake-pool-guide/stake-key/delegate.md)
 * [Stake pool](stake-pool-guide/stake-pool/README.md)
