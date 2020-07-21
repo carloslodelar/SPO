@@ -19,7 +19,7 @@ At this moment we have:
 | `stake.vkey` | staking verification key |
 | `stake.skey` | staking signing key |
 | `stake.addr` | registered stake address |
-| `payment.addr` | funded address linked to `stake` |
+| `paymentwithstake.addr` | funded address linked to `stake` |
 | `cold.vkey` | cold verification key |
 | `cold.skey` | cold signing key |
 | `cold.counter` | issue counter |
@@ -40,7 +40,7 @@ Registering your stake pool requires:
 
 **WARNING:** Generating the **stake pool registration certificate** and the **delegation certificate** requires the **cold keys** So, you may want to generate these certificates in your local machine taking the proper security measures to avoid exposing your cold keys to the internet.
 
-## 1. Create a JSON file with your pool's metadata
+## Create a JSON file with your pool's metadata
 
 ```text
 {
@@ -53,7 +53,7 @@ Registering your stake pool requires:
 
 Store the file in a url you control, for example [https://gist.githubusercontent.com/testPool/.../testPool.json](https://github.com/carloslodelar/SPO/tree/baec64ba9efba39d4b60b7824fb4d7b962f2c3e7/stake-pool-operations/shorturl.at/gDV47/README.md)
 
-## 2. Get the hash of your file:
+## Get the hash of your file:
 
 This validates that the JSON fits the required schema, if it does, you will get the hash of your file.
 
@@ -63,7 +63,7 @@ cardano-cli shelley stake-pool metadata-hash --pool-metadata-file testPool.json
 >6bf124f217d0e5a0a8adb1dbd8540e1334280d49ab861127868339f43b3948af
 ```
 
-## 3. Generate Stake pool registration certificate
+## Generate Stake pool registration certificate
 
 Create a _stake pool registration certificate_:
 
@@ -116,7 +116,7 @@ cbor-hex:
 8113f50e779d80f6   
 ```
 
-## 4. Generate delegation certificate \(pledge\)
+## Generate delegation certificate \(pledge\)
 
 We have to honor our pledge by delegating at least the pledged amount to our pool, so we have to create a _delegation certificate_ to achieve this:
 
@@ -129,31 +129,39 @@ cardano-cli shelley stake-address delegation-certificate \
 
 This creates a delegation certificate which delegates funds from all stake addresses associated with key `stake.vkey` to the pool belonging to cold key `cold.vkey`. If we had used different staking keys for the pool owners in the first step, we would need to create delegation certificates for all of them instead.
 
-## 5. Submit the pool certificate and delegation certificate to the blockchain
+## Submit the pool certificate and delegation certificate to the blockchain
 
 Finally we need to submit the pool registration certificate and the delegation certificate\(s\) to the blockchain by including them in one or more transactions. We can use one transaction for multiple certificates, the certificates will be applied in order.
 
-As before, we start by calculating the fees \(as explained [here](https://github.com/carloslodelar/SPO/tree/baec64ba9efba39d4b60b7824fb4d7b962f2c3e7/stake-pool-operations/040_transactions.md)\):
+As before, we start by drafting the transaction:
+
+```text
+cardano-cli shelley transaction build-raw \
+--tx-in 9db6cf...#0 \
+--tx-out $(cat paymentwithstake.addr)+0 \
+--ttl 0 \
+--fee 0 \
+--out-file tx.raw \
+--certificate-file pool.cert \
+--certificate-file delegation.cert
+```
+
+Calculate the the fees
 
 ```text
 cardano-cli shelley transaction calculate-min-fee \
+--tx-body-file tx.raw \
 --tx-in-count 1 \
 --tx-out-count 1 \
---ttl 200000 \
 --testnet-magic 42 \
---signing-key-file payment.skey \
---signing-key-file stake.skey \
---signing-key-file cold.skey \
---certificate-file pool.cert \
---certificate-file delegation.cert \
+--witness-count 1 \
+--byron-witness-count 0 \
 --protocol-params-file protocol.json
 
 > 184685
 ```
 
-Note how we included the two certificates in the call to `calculate-min-fee` and that the transaction will have to be signed by the payment key corresponding to the address we use to pay for the transaction, the staking key\(s\) of the owner\(s\) and the cold key of the node.
-
-We will also have to pay a deposit for the stake pool registration. The deposit amount is specified in the genesis file:
+We have to pay a deposit for the stake pool registration. The deposit amount is specified in the genesis file and in `protocol.json` 
 
 ```text
 "poolDeposit": 500000000
@@ -183,12 +191,12 @@ Now we can build the transaction:
 ```text
 cardano-cli shelley transaction build-raw \
 --tx-in 9db6cf...#0 \
---tx-out $(cat payment.addr)+999499083081 \
+--tx-out $(cat paymentwithstake.addr)+999499083081 \
 --ttl 200000 \
 --fee 184685 \
---out-file tx.raw \
 --certificate-file pool.cert \
---certificate-file delegation.cert
+--certificate-file delegation.cert \
+--out-file tx.raw 
 ```
 
 Sign it:
