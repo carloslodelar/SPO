@@ -1,9 +1,5 @@
 # Register a Stake Pool with Metadata
 
-**USE TAG: 1.14.2**
-
-## Prerequisites
-
 Make sure you have access to:
 
 * One or more funded addresses.
@@ -38,7 +34,9 @@ Registering your stake pool requires:
 * Submit the certificates to the blockchain
 * Submit a PR with pool metadata \(Temporary step until DB-sync is upgraded\)
 
-**WARNING:** Generating the **stake pool registration certificate** and the **delegation certificate** requires the **cold keys** So, you may want to generate these certificates in your local machine taking the proper security measures to avoid exposing your cold keys to the internet.
+{% hint style="info" %}
+**WARNING:** Generating the **stake pool registration certificate** and the **delegation certificate** requires the **cold keys** So, when doing this on mainnet you may want to generate these certificates in your local machine taking the proper security measures to avoid exposing your cold keys to the internet.
+{% endhint %}
 
 ## Create a JSON file with your pool's metadata
 
