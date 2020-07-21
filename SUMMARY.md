@@ -44,6 +44,7 @@
   * [Register stake address in the blockchain](stake-pool-guide/stake-key/register_key.md)
   * [Delegate to a pool](stake-pool-guide/stake-key/delegate.md)
 * [Stake pool](stake-pool-guide/stake-pool/README.md)
+  * [Core node and relay nodes](stake-pool-guide/stake-pool/core-node-and-relay-nodes.md)
   * [KES Periods](stake-pool-guide/stake-pool/kes_period.md)
   * [Pledge](stake-pool-guide/stake-pool/pledge.md)
   * [Generate your stake pool keys](stake-pool-guide/stake-pool/node_keys.md)
@@ -67,4 +68,5 @@
 * [bash cheat sheet](additional-material/bash.md)
 * [tmux guide](additional-material/tmux.md)
 * [scp command usage](additional-material/scp-command-usage.md)
+* [Firewall](additional-material/firewall.md)
 
