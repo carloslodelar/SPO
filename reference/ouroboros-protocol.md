@@ -11,7 +11,7 @@ Read the original Ouroboros papers:
 
 
 
-And a video explanation for non PHD's:
+And a video explanation for non PhD's:
 
 [What’s an Ouroboros and how you cook it?](https://www.youtube.com/watch?v=U92Ks8rucDQ&t=1s)
 
