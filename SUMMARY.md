@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Stake pool initiative](README.md)
+* [QUESTIONS AND FEEDBACK: Raise an issue in github](https://github.com/carloslodelar/SPO/issues/new/choose)
 * [Syllabus](syllabus.md)
 * [Ouroboros Protocol](ouroboros.md)
 
@@ -76,8 +77,4 @@
 * [tmux guide](additional-material/tmux.md)
 * [scp command usage](additional-material/scp-command-usage.md)
 * [Firewall](additional-material/firewall.md)
-
----
-
-* [QUESTIONS AND FEEDBACK: Raise an issue in github](https://github.com/carloslodelar/SPO/issues/new/choose)
 
