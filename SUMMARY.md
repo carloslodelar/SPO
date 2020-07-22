@@ -1,9 +1,15 @@
 # Table of contents
 
 * [Stake pool initiative](README.md)
-* [Questions and feedback: Raise an issue in github](https://github.com/carloslodelar/SPO/issues/new/choose)
-* [Syllabus](syllabus.md)
-* [Ouroboros Protocol](ouroboros.md)
+
+## QUESTIONS, FEEDBACK &  HELP <a id="about-the-stake-pool-initiative"></a>
+
+* [Questions, feedback & help](about-the-stake-pool-initiative/questions-feedback-and-help.md)
+
+## SYLABUS
+
+* [Syllabus](sylabus/syllabus.md)
+* [Ouroboros Protocol](sylabus/ouroboros.md)
 
 ## VIDEO LESSONS
 

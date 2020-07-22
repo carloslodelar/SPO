@@ -76,7 +76,7 @@ At the same time, when the aggregate stake of a stake pool grows beyond a certai
 
 All these functionalities make Ouroboros the best proof of stake ledger protocol to date. And its only implementation is currently in the Cardano blockchain.
 
-![Ouroboros protocol](.gitbook/assets/ouroborosprotocol-blueprint-vertical.jpg)
+![Ouroboros protocol](../.gitbook/assets/ouroborosprotocol-blueprint-vertical.jpg)
 
 ## How it works <a id="9621"></a>
 
