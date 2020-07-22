@@ -22,6 +22,7 @@
 * [Generate stake pool keys](video-lessons/stakepools-keys.md)
 * [Topology files](video-lessons/topology-files.md)
 * [Register stake pool and metadata](video-lessons/register-stake-pool.md)
+* [Logging and monitoring with prometheus](video-lessons/logging-prometheus.md)
 
 ## STAKE POOL HANDBOOK <a id="stake-pool-guide"></a>
 
