@@ -185,7 +185,11 @@ git checkout tags/<the-tag-you-want>
 cabal install cardano-node cardano-cli
 ```
 
+{% hint style="info" %}
 **Note:** It might be necessary to delete the `db`-folder \(the database-folder\) before running an updated version of the node.
+{% endhint %}
 
-Congratulations! You have installed the node, started it and connected it to the Cardano mainnet.
+
+
+
 
