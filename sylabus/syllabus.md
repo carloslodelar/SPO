@@ -13,6 +13,7 @@
   * **Goals**
   * **Course overview**
 * **Introduction to Cardano**
+  * **Ouroboros Protocol \(7 min read\)** 
   * **Blockchain**
   * **Proof of Stake**
   * **Decentralization**

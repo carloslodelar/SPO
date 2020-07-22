@@ -9,10 +9,10 @@
 ## SYLABUS
 
 * [Syllabus](sylabus/syllabus.md)
-* [Ouroboros Protocol](sylabus/ouroboros.md)
 
 ## VIDEO LESSONS
 
+* [Ouroboros Protocol](video-lessons/ouroboros.md)
 * [Introduction to Cardano](video-lessons/introduction-to-cardano.md)
 * [Installing VirtualBox](video-lessons/vb.md)
 * [Setup a server on AWS](video-lessons/aws.md)
@@ -76,6 +76,7 @@
 * [Reference](reference/README.md)
   * [Making a Shelley blockchain from scratch](reference/shelley-genesis.md)
   * [Cardano Node CLI Reference](reference/cardano-node-cli-reference.md)
+  * [Ouroboros protocol](reference/ouroboros-protocol.md)
 
 ## Additional material
 

@@ -1,0 +1,10 @@
+# Ouroboros protocol
+
+[OUROBOROS](https://eprint.iacr.org/2016/889.pdf)
+
+[OUROBOROS PRAOS](https://eprint.iacr.org/2017/573.pdf)
+
+[OUROBOROS GENESIS](https://eprint.iacr.org/2018/378.pdf)
+
+Video explanation: [What’s an Ouroboros and how you cook it?](https://www.youtube.com/watch?v=U92Ks8rucDQ&t=1s)
+
