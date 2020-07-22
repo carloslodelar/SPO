@@ -4,6 +4,8 @@ description: ABOUT
 
 # Stake pool initiative
 
+### **BEN'S INTRODUCTION VIDEO CAN GO HERE**
+
 ### **TO DO**
 
 **We need an introduction to the course. A nice paragraph here.** 
