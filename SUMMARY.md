@@ -19,6 +19,7 @@
 * [Stake Keys and address](video-lessons/stake-keys-and-address.md)
 * [Regsiter stake key to the blockchain](video-lessons/register-stake-key.md)
 * [Generate stake pool keys](video-lessons/stakepools-keys.md)
+* [Topology files](video-lessons/topology-files.md)
 * [Register stake pool and metadata](video-lessons/register-stake-pool.md)
 
 ## STAKE POOL HANDBOOK <a id="stake-pool-guide"></a>
