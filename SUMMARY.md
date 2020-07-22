@@ -79,5 +79,5 @@
 
 ---
 
-* [QUESTIONS AND FEEDBACK: Raise an issue in github](https://github.com/carloslodelar/SPO/issues)
+* [QUESTIONS AND FEEDBACK: Raise an issue in github](https://github.com/carloslodelar/SPO/issues/new/choose)
 
