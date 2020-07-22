@@ -9,6 +9,7 @@
 * [Introduction to Cardano](video-lessons/introduction-to-cardano.md)
 * [Installing VirtualBox](video-lessons/vb.md)
 * [Setup a server on AWS](video-lessons/aws.md)
+* [Alternative to AWS](video-lessons/alternative-to-aws.md)
 * [Installing cardano-node](video-lessons/installing.md)
 * [Get configuration files and run the node](video-lessons/config-files-run-node.md)
 * [Using the cardano-cli](video-lessons/cli.md)
