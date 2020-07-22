@@ -194,7 +194,7 @@ cardano-cli shelley transaction build-raw \
 --tx-out $(cat addresses/paymentwithstake.addr)+999499083081 \
 --ttl 200000 \
 --fee 184685 \
---certificate-file addresses/pool-registration.cert \
+--certificate-file pool-registration.cert \
 --certificate-file delegation.cert \
 --out-file tx.raw 
 ```
@@ -222,7 +222,7 @@ cardano-cli shelley transaction submit \
 To verify that your stake pool registration was indeed successful, you can perform the following steps:
 
 ```text
-cardano-cli shelley stake-pool id --verification-key-file <path to your cold.vkey>
+cardano-cli shelley stake-pool id --verification-key-file cold.vkey
 ```
 
 will output your poolID. You can then check for the presence of your poolID in the network ledger state, with the following command:
