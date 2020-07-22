@@ -20,7 +20,6 @@
   * **Delegation**
   * **Stake Pools**
   * **Rewards**
-* **The Ouroboros protocol**
 * **Setting up your system**
   * **Virtual Box**
   * **AWS**
