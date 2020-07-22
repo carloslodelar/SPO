@@ -50,6 +50,7 @@
   * [Pledge](stake-pool-guide/stake-pool/pledge.md)
   * [Generate your stake pool keys](stake-pool-guide/stake-pool/node_keys.md)
   * [Configure topology files for block-producing and relay nodes.](stake-pool-guide/stake-pool/core_relay.md)
+  * [Start your core node](stake-pool-guide/stake-pool/corenode-start.md)
   * [Register a Stake Pool with Metadata](stake-pool-guide/stake-pool/register_stakepool.md)
   * [Retiring a Stake Pool](stake-pool-guide/stake-pool/retire_stakepool.md)
 * [Monitoring the node](stake-pool-guide/logging-monitoring/README.md)

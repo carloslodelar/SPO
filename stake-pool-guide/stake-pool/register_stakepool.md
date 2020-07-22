@@ -51,6 +51,8 @@ Registering your stake pool requires:
 
 Store the file in a url you control, for example [https://gist.githubusercontent.com/testPool/.../testPool.json](https://github.com/carloslodelar/SPO/tree/baec64ba9efba39d4b60b7824fb4d7b962f2c3e7/stake-pool-operations/shorturl.at/gDV47/README.md)
 
+You can use a GIST in github, just make sure that the URL is less than 65 characters long. 
+
 ## Get the hash of your file:
 
 This validates that the JSON fits the required schema, if it does, you will get the hash of your file.
@@ -69,17 +71,17 @@ Create a _stake pool registration certificate_:
 cardano-cli shelley stake-pool registration-certificate \
 --cold-verification-key-file cold.vkey \
 --vrf-verification-key-file vrf.vkey \
---pool-pledge 1000000000 \
---pool-cost 100000000 \
---pool-margin 0.05 \
+--pool-pledge 70000000000 \
+--pool-cost 4321000000 \
+--pool-margin 0.04 \
 --pool-reward-account-verification-key-file stake.vkey \
 --pool-owner-stake-verification-key-file stake.vkey \
 --testnet-magic 42 \
---pool-relay-port 3001 \
---pool-relay-ipv4 123.123.123.123 \
---metadata-url https://gist.githubusercontent.com/testPool/.../testPool.json \
---metadata-hash 6bf124f217d0e5a0a8adb1dbd8540e1334280d49ab861127868339f43b3948af \
---out-file pool.cert
+--pool-relay-ipv4 123.121.123.121 \
+--pool-relay-port 3000 \
+--metadata-url https://git.io/JJWdJ \
+--metadata-hash d0e21b420a554d7d2d0d85c4e62a1980d6b9d8f7a2d885b3de0fff472e37241b \
+--out-file pool-registration.cert
 ```
 
 | Parameter | Explanation |
@@ -140,7 +142,7 @@ cardano-cli shelley transaction build-raw \
 --ttl 0 \
 --fee 0 \
 --out-file tx.raw \
---certificate-file pool.cert \
+--certificate-file pool-registration.cert \
 --certificate-file delegation.cert
 ```
 
@@ -189,10 +191,10 @@ Now we can build the transaction:
 ```text
 cardano-cli shelley transaction build-raw \
 --tx-in 9db6cf...#0 \
---tx-out $(cat paymentwithstake.addr)+999499083081 \
+--tx-out $(cat addresses/paymentwithstake.addr)+999499083081 \
 --ttl 200000 \
 --fee 184685 \
---certificate-file pool.cert \
+--certificate-file addresses/pool-registration.cert \
 --certificate-file delegation.cert \
 --out-file tx.raw 
 ```
