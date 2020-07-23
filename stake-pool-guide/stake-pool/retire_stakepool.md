@@ -49,12 +49,12 @@ So for example, we can decide to retire in epoch 41.
 
 **WARNING** This involves the __cold keys__. Take the necessary precautions to not to expose your cold keys to the internet.
 
-Create the deregistration certificate and save it as `pool.retirement`:
+Create the deregistration certificate and save it as `pool.deregistration`:
 
     cardano-cli shelley stake-pool deregistration-certificate \
     --cold-verification-key-file cold.vkey \
     --epoch 41 \
-    --out-file pool.retirement
+    --out-file pool.deregistration
 
 ## Draft the transaction
 
@@ -64,7 +64,7 @@ Create the deregistration certificate and save it as `pool.retirement`:
     --ttl 0 \
     --fee 0 \
     --out-file tx.draft \
-    --certificate-file pool.retirement
+    --certificate-file pool.deregistration
 
 ## Calculate the fees:
 
@@ -108,7 +108,7 @@ Build the raw transaction:
         --ttl 860000 \
         --fee 171309 \
         --out-file tx.raw \
-        --certificate-file pool.retirement
+        --certificate-file pool.deregistration
 
 **Sign it with both the payment signing key and the cold signing key
 (the first signature is necessary because we are spending funds from `paymant.addr`,
