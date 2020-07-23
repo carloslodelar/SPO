@@ -54,7 +54,7 @@ Create the deregistration certificate and save it as `pool.retirement`:
     cardano-cli shelley stake-pool deregistration-certificate \
     --cold-verification-key-file cold.vkey \
     --epoch 41 \
-    --out-file pool.dereg
+    --out-file pool.retirement
 
 ## Draft the transaction
 
