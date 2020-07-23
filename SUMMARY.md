@@ -6,9 +6,9 @@
 
 * [Questions, feedback & help](about-the-stake-pool-initiative/questions-feedback-and-help.md)
 
-## SYLABUS
+## SYLLABUS
 
-* [Syllabus](sylabus/syllabus.md)
+* [Syllabus](syllabus/syllabus.md)
 
 ## VIDEO LESSONS
 
