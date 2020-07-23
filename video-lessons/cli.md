@@ -4,7 +4,7 @@ description: How to use the cli and how to get access to the help of the command
 
 # Using the cardano-cli
 
-In this lesson we will learn how to use the cardano-cli to interacto with our node and how to get access to the help included for every command. 
+In this lesson we will learn how to use the cardano-cli to interact with our node and how to get access to the help included for every command. 
 
 ### How to use the cardano-cli
 
