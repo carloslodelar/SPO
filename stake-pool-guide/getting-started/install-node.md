@@ -1,6 +1,6 @@
 # Installing and Running a node
 
-### Prerequisites
+## Prerequisites
 
 Set up your platform:
 
@@ -10,8 +10,7 @@ You will need:
 * A recent version of Linux, not Windows or MacOS – this will help us isolate any issues that arise;
 * Make sure you are on a network that is not firewalled. In particular, we will be using TCP/IP port 3000 and 3001 by default to establish connections with other nodes, so this will need to be open.
 
-
-### Install dependencies
+## Install dependencies
 
 We need the following packages and tools on our Linux system to download the source code and build it:
 
@@ -43,7 +42,7 @@ sudo apt-get install build-essential pkg-config libffi-dev libgmp-dev libssl-dev
 
 If you are using a different flavor of Linux, you will need to use the package manager suitable for your platform instead of `yum` or `apt-get`, and the names of the packages you need to install might differ.
 
-### Download, unpack, install and update Cabal:
+## Download, unpack, install and update Cabal:
 
 ```text
 wget https://downloads.haskell.org/~cabal/cabal-install-3.2.0.0/cabal-install-3.2.0.0-x86_64-unknown-linux.tar.xz
@@ -59,7 +58,7 @@ Verify that .local/bin is in your PATH
 echo $PATH
 ```
 
-If .local/bin is not in the PATH, you need to add the following line to  your `.bashrc`file
+If .local/bin is not in the PATH, you need to add the following line to your `.bashrc`file
 
 Navigate to your home folder:
 
@@ -97,7 +96,7 @@ Above instructions install Cabal version `3.2.0.0`. You can check the version by
 cabal --version
 ```
 
-### Download and install GHC:
+## Download and install GHC:
 
 ```text
 wget https://downloads.haskell.org/~ghc/8.6.5/ghc-8.6.5-x86_64-deb9-linux.tar.xz
@@ -109,7 +108,7 @@ sudo make install
 cd ..
 ```
 
-### Install Libsodium
+## Install Libsodium
 
 ```text
 git clone https://github.com/input-output-hk/libsodium
@@ -122,16 +121,15 @@ sudo make install
 
 export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH"
-
 ```
 
-### Download the source code for cardano-node
+## Download the source code for cardano-node
 
 ```text
 git clone https://github.com/input-output-hk/cardano-node.git
 ```
 
-This creates the folder `cardano-node`  and downloads the latest source code.
+This creates the folder `cardano-node` and downloads the latest source code.
 
 After the download has finished, we can check its content by
 
@@ -153,7 +151,7 @@ git tag
 git checkout tags/1.15.1
 ```
 
-### Build and install the node
+## Build and install the node
 
 Now we build and install the node with `cabal`, which will take a couple of minutes the first time you do a build. Later builds will be much faster, because everything that does not change will be cached.
 
@@ -188,3 +186,4 @@ cabal install cardano-node cardano-cli
 {% hint style="info" %}
 **Note:** It might be necessary to delete the `db`-folder \(the database-folder\) before running an updated version of the node.
 {% endhint %}
+
